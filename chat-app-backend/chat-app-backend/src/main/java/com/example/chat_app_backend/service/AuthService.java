@@ -20,14 +20,14 @@ public class AuthService {
 
     public void register(String username, String password) {
 
-        Optional<User> existingUser = userRepository.findByUsername(username); // Update based on return type
+        Optional<User> existingUser = userRepository.findByUsername(username);
         if (existingUser.isPresent()) {
             throw new RuntimeException("User already exists");
         }
 
         User user = new User();
         user.setUsername(username);
-        user.setPassword(passwordEncoder.encode(password)); // Hash password
+        user.setPassword(passwordEncoder.encode(password));
         userRepository.save(user);
     }
 

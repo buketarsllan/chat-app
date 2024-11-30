@@ -5,7 +5,7 @@ public class ChatMessage
     private String sender;
     private String content;
     private MessageType type;
-    private String roomId;  // New field for room ID
+    private String roomId;
 
     public enum MessageType {
         CHAT, JOIN, LEAVE
